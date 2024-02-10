@@ -6,9 +6,9 @@ function Header() {
         <header>
             <nav>
                 <ul>
-                    <li><Link to="/climate">Climate</Link></li>
-                    <li><Link to="/air-emissions">Air Emissions</Link></li>
-                    {/* Add more links as needed */}
+                    <li><Link to="/ClimatePage">Climate</Link></li>
+                    <li><Link to="/EnvironmentPage">Environment</Link></li>
+                    <li><Link to="/Workforce">Workforce</Link></li>
                 </ul>
             </nav>
         </header>

@@ -1,15 +1,14 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Header from './Header'; 
-import Climate from './Climate';
-import AirEmissions from './AirEmissions';
+import './App.css';
+import Header from './components/Header'; 
+import ClimatePage from './components/ClimatePage';
+import EnvironmentPage from './components/EnvironmentPage';
 
 function App() {
     return (
-        <div>
-            <Header /> <Route path="/climate" component={ClimatePage} />
-        <Route path="/air-emissions" component={AirEmissionsPage} />
-        </div>
+            <div>
+                <Header />
+            </div>
     );
 }
 
