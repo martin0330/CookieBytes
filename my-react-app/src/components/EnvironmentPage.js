@@ -40,7 +40,6 @@ function EnvironmentPage() {
             <select onChange={handleCategorySelect}>
                 <option value="">Select a category</option>
                 <option value="co2_emissions">CO2 emissions</option>
-                {/ Add more options as needed */}
             </select>
 
         </div>

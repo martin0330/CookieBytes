@@ -1,19 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './Header';
 
 function ClimatePage() {
-    const countryName = 'United States'; // Replace with the actual country name
+    const [selectedCity, setSelectedCity] = useState(null);
+    const [selectedCategory, setSelectedCategory] = useState(null);
+
+    const handleCitySelect = (event) => {
+        setSelectedCity(event.target.value);
+    };
+
+    const handleCategorySelect = (event) => {
+        setSelectedCategory(event.target.value);
+    };
 
     return (
         <div>
             <Header />
-            <h2>Climate Page</h2>
-            <p>Climate page content</p>
-            <img src={`/images/co2_emissions_${countryName}.png`} alt={`CO2 emissions for ${countryName}`} />
-            <img src={`/images/ghg_emissions_${countryName}.png`} alt={`Greenhouse gas emissions for ${countryName}`} />
-            <img src={`/images/renewable_${countryName}.png`} alt={`Renewable energy sources for ${countryName}`} />
-            <img src={`/images/freshwater_${countryName}.png`} alt={`Freshwater withdrawals for ${countryName}`} />
-            <img src={`/images/plastic_pollution_${countryName}.png`} alt={`Plastic pollution for ${countryName}`} />
+
+            <select onChange={handleCitySelect}>
+                <option value="">Select a country</option>
+                <option value="UnitedStates">United States</option>
+                {/* Add more options as needed */}
+            </select>
+
+            <select onChange={handleCategorySelect}>
+                <option value="">Select a category</option>
+                <option value="co2_emissions">CO2 emissions</option>
+                {/* Add more options as needed */}
+            </select>
+
+            {selectedCity && selectedCategory && (
+                <img src={`/images/${selectedCategory}_${selectedCity}.png`} alt={`${selectedCategory} for ${selectedCity}`} />
+            )}
         </div>
     );
 }

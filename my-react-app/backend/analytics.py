@@ -32,74 +32,70 @@ def graphing(countryName, dataset):
     #renewable is line graphs: year vs amount of energy based on energy types for select country
     #freshwater is year vs amount withdrawn for select country
 
+    plt.style.use('dark_background')  # Change the style of the plot
+
     if (dataset == "df_absolute_co2"):
         country_mask = df_absolute_co2["Entity"] == countryName
         country_df = df_absolute_co2[country_mask]
 
-        plt.scatter(country_df['Year'],country_df['Annual CO₂ emissions'])
-        plt.xlabel('X-axis Label')
-        plt.ylabel('Y-axis Label')
-        plt.title(f'Annual Co2 emissions {countryName}')
+        plt.figure(figsize=(10, 6))
+        plt.scatter(country_df['Year'], country_df['Annual CO₂ emissions'], color='purple', alpha=0.5)
+        plt.grid(True)
+        plt.xlabel('Year', fontsize=14, color='lightblue')
+        plt.ylabel('Annual CO₂ emissions', fontsize=14, color='lightblue')
+        plt.title(f'Annual Co2 emissions {countryName}', fontsize=16, color='lightblue')
         plt.show()
+
     elif (dataset == "total_ghg_emissions"):
         country_mask = total_ghg_emissions["Entity"] == countryName
         country_df = total_ghg_emissions[country_mask]
 
-        plt.scatter(country_df['Year'],country_df["Annual greenhouse gas emissions in CO₂ equivalents"])
-        plt.xlabel('Year')
-        plt.ylabel('Emmisions in Co2 equivalents')
-        plt.title(f'Annual greenhouse gas emissions for {countryName}')
+        plt.figure(figsize=(10, 6))
+        plt.scatter(country_df['Year'], country_df['Annual greenhouse gas emissions in CO₂ equivalents'], color='purple', alpha=0.5)
+        plt.grid(True)
+        plt.xlabel('Year', fontsize=14, color='lightblue')
+        plt.ylabel('Emmisions in Co2 equivalents', fontsize=14, color='lightblue')
+        plt.title(f'Annual greenhouse gas emissions for {countryName}', fontsize=16, color='lightblue')
         plt.show()
+
     elif(dataset == "modern_renewable"):
         country_mask = modern_renewable["Entity"] == countryName
         country_df = modern_renewable[country_mask]
 
         plt.figure(figsize=(10, 6))
-
-        #Electricity from wind - TWh,Electricity from hydro - TWh,Electricity from solar - TWh,Other renewables including bioenergy - TWh
-        plt.plot(country_df['Year'], country_df['Electricity from wind - TWh'], label='Wind', marker='o')
-        plt.plot(country_df['Year'], country_df['Electricity from hydro - TWh'], label='Hydro', marker='o')
-        plt.plot(country_df['Year'], country_df['Electricity from solar - TWh'], label='Solar', marker='o')
-        plt.plot(country_df['Year'], country_df['Other renewables including bioenergy - TWh'], label='Other', marker='o')
-
-        # Adding labels and title
-        plt.xlabel('Year')
-        plt.ylabel('Electricity in TWh')
-        plt.title(f'Modern renewable energy generation by source for {countryName}')
-        plt.legend()  # Add a legend
-
+        plt.plot(country_df['Year'], country_df['Electricity from wind - TWh'], label='Wind', marker='o', color='purple', alpha=0.5)
+        plt.plot(country_df['Year'], country_df['Electricity from hydro - TWh'], label='Hydro', marker='o', color='purple', alpha=0.5)
+        plt.plot(country_df['Year'], country_df['Electricity from solar - TWh'], label='Solar', marker='o', color='purple', alpha=0.5)
+        plt.plot(country_df['Year'], country_df['Other renewables including bioenergy - TWh'], label='Other', marker='o', color='purple', alpha=0.5)
+        plt.grid(True)
+        plt.xlabel('Year', fontsize=14, color='lightblue')
+        plt.ylabel('Electricity in TWh', fontsize=14, color='lightblue')
+        plt.title(f'Modern renewable energy generation by source for {countryName}', fontsize=16, color='lightblue')
+        plt.legend()
         plt.show()
+
     elif(dataset == "annual_freshwater_withdrawals"):
         country_mask = annual_freshwater_withdrawals["Entity"] == countryName
         country_df = annual_freshwater_withdrawals[country_mask]
 
-        plt.scatter(country_df['Year'],country_df['Annual freshwater withdrawals, total (billion cubic meters)'])
-        plt.xlabel('Year')
-        plt.ylabel('Withdrawals in billion cubic meters')
-        plt.title(f'Annual freshwater withdrawals for {countryName}')
+        plt.figure(figsize=(10, 6))
+        plt.scatter(country_df['Year'], country_df['Annual freshwater withdrawals, total (billion cubic meters)'], color='purple', alpha=0.5)
+        plt.grid(True)
+        plt.xlabel('Year', fontsize=14, color='lightblue')
+        plt.ylabel('Withdrawals in billion cubic meters', fontsize=14, color='lightblue')
+        plt.title(f'Annual freshwater withdrawals for {countryName}', fontsize=16, color='lightblue')
         plt.show()
+
     elif(dataset == "plastic_pollution"):
         country_mask = plastic_pollution["Entity"] == countryName
         country_df = plastic_pollution[country_mask]
 
-        plt.figure(figsize=(8, 5))
-
-        # Bar chart
-        plt.bar(country_df['Entity'], country_df['Mismanaged plastic waste to ocean per capita (kg per year)'], color='skyblue')
-
-        # Adding labels and title
-        plt.xlabel('Country')
-        plt.ylabel('kg/year')
-        plt.title('Mismanaged plastic waste to ocean per capita (kg per year)')
-
-        # Display the plot
+        plt.figure(figsize=(10, 6))
+        plt.bar(country_df['Entity'], country_df['Mismanaged plastic waste to ocean per capita (kg per year)'], color='purple', alpha=0.5)
+        plt.grid(True)
+        plt.xlabel('Country', fontsize=14, color='lightblue')
+        plt.ylabel('kg/year', fontsize=14, color='lightblue')
+        plt.title('Mismanaged plastic waste to ocean per capita (kg per year)', fontsize=16, color='lightblue')
         plt.show()
 
-#graphing("United States", "total_ghg_emissions")
-
-
-
-    
-
-
-
+graphing("United States", "total_ghg_emissions")
