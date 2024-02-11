@@ -1,14 +1,14 @@
 // HomePage.js
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "./Header";
+import webbackground from './webbackground.mp4';
 import './HomePage.css';
 
 function HomePage() {
     return (
+        <div>
         <div className="container">
-            <video autoPlay muted loop id="myVideo" className="background-video">
-                <source src="webbackground.mp4" type="video/mp4" />
-            </video>
+            <video src={webbackground} autoPlay loop muted />
             <div className="content">
                 <Header />
                 <div className="text-container">
@@ -16,6 +16,13 @@ function HomePage() {
                     <p className="definition-style">: of, relating to, or being a method of harvesting or using a resource so that the resource is not depleted or permanently damaged</p>
                 </div>
             </div>
+        </div>
+        <section id="additional-info" className="additional-info-section">
+                <div className="additional-info-content">
+                    <h2 className="section-title">Our Mission:</h2>
+                    <p>Our core mission is to invest in the development of the energy supply essential to human and economic progress, while effectively managing social and environmental concerns, including climate change.</p>
+                </div>
+            </section>
         </div>
     );
 }

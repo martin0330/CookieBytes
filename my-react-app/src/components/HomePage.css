@@ -1,10 +1,10 @@
 .container {
     position: relative;
     height: 100vh;
-    overflow: hidden;
+    
 }
 
-.background-video {
+.container video {
     position: absolute;
     top: 0;
     left: 0;
@@ -15,7 +15,11 @@
 }
 
 .content {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     z-index: 1;
 }
 
@@ -24,19 +28,57 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100%;
+    margin-top: -100px; /* Adjust as needed */
 }
 
 .h1-style {
     color: white;
-    font-size: 3em;
+    font-size: 4em;
 }
 
 .definition-style{
-    font-size: 16px;
+    font-size: 25px;
 }
 
 .adjective-style{
     color:lightblue;
-    font-size: 18px;
+    font-size: 20px;
     margin-left:10px;
+}
+
+.additional-info-section {
+    background-image: url('background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 40px; /* Add padding for spacing */
+    text-align: center; /* Center-align content */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.additional-info-content {
+    display: inline-block; /* Make content display inline-block */
+    background-color:#f5f5f5;
+    padding: 80px; /* Add padding for spacing */
+    border-radius: 10px; /* Add rounded corners */
+    margin-top: 20px; /* Add margin to separate from previous content */
+    font-size: 20px;
+    max-width: 800px;
+    margin:auto;
+}
+
+.section-title {
+    font-size: 50px; /* Adjust font size as needed */
+    color:black;
+    text-decoration: underline;
+}
+
+.additional-info-content p {
+    margin-top: 10px; /* Add margin to separate paragraph from title */
+    color:black
 }
