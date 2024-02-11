@@ -17,7 +17,7 @@
 .page-container {
     display: flex;
     flex-direction: column;
-    height: 100vh; 
+    min-height: 100vh; 
     background-image: url(climatebackground.png);
     background-size: 100% auto;
     background-position: center;
