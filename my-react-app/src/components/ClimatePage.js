@@ -22,7 +22,7 @@ function ClimatePage() {
             There are various metrics and thresholds used to assess sustainability across different sectors and industries. These metrics help measure and track an organization's or investment's environmental, social, and governance (ESG) performance.
             <ul>
                 <li><strong>Access to Clean Water and Sanitation:</strong> Indicators reflecting the availability of clean water and proper sanitation facilities.</li>
-                <li>Examining the amount of waste generated per capita and the percentage of waste that is recycled can provide insights into a country's waste management practices.</li>
+                <li>Examining the amount of <strong>waste generated</strong> per capita and the percentage of waste that is recycled can provide insights into a country's waste management practices.</li>
                 <li><strong>Carbon Footprint: </strong>The total greenhouse gas emissions of a country, including emissions from energy production, transportation, and industry.</li>
                 <li><strong>Renewable Energy Share: </strong>The percentage of energy generated from renewable sources, indicating a country's commitment to clean energy.</li>
             </ul>

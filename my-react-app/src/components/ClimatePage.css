@@ -21,6 +21,7 @@
     background-image: url(climatebackground.png);
     background-size: 100% auto;
     background-position: center;
+    background-repeat: repeat-y;
 }
 
 .content-container {

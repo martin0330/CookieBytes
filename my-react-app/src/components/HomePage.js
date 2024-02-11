@@ -19,7 +19,7 @@ function HomePage() {
         </div>
         <section id="additional-info" className="additional-info-section">
                 <div className="additional-info-content">
-                    <h2 className="section-title">ConnocoPhillips Mission:</h2>
+                    <h2 className="section-title">ConocoPhillips Mission:</h2>
                     <p>Our core mission is to invest in the development of the energy supply essential to human and economic progress, while effectively managing social and environmental concerns, including climate change.</p>
                 </div>
             </section>
