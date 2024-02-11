@@ -1,0 +1,1 @@
+graphing("United States", "total_ghg_emissions")
