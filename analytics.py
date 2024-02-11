@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib.animation as animation
 
 #maniuplating the data to only get the countries managed by COP
 countries_to_keep = ["United States", "Canada","Colombia","Libya","United Kingdom","Norway","Qatar","Malaysia","Singapore","Cambodia","China","Japan","Australia"]
@@ -31,16 +32,19 @@ def graphing(countryName, dataset):
     #co2 and ghg is scatter: year vs amount for select country
     #renewable is line graphs: year vs amount of energy based on energy types for select country
     #freshwater is year vs amount withdrawn for select country
+    plt.style.use('dark_background')
 
     if (dataset == "df_absolute_co2"):
         country_mask = df_absolute_co2["Entity"] == countryName
         country_df = df_absolute_co2[country_mask]
 
         plt.scatter(country_df['Year'],country_df['Annual CO₂ emissions'])
-        plt.xlabel('X-axis Label')
-        plt.ylabel('Y-axis Label')
+        plt.xlabel('Year')
+        plt.ylabel('Emissions')
         plt.title(f'Annual Co2 emissions {countryName}')
+        
         plt.show()
+
     elif (dataset == "total_ghg_emissions"):
         country_mask = total_ghg_emissions["Entity"] == countryName
         country_df = total_ghg_emissions[country_mask]
@@ -95,7 +99,9 @@ def graphing(countryName, dataset):
         # Display the plot
         plt.show()
 
-#graphing("United States", "total_ghg_emissions")
+
+
+graphing("United States", "df_absolute_co2")
 
 
 
