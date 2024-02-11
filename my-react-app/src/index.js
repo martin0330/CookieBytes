@@ -5,8 +5,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ClimatePage from './components/ClimatePage';
-import EnvironmentPage from './components/EnvironmentPage';
-import Workforce from './components/Workforce';
 import HomePage from './components/HomePage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -16,8 +14,6 @@ root.render(
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/ClimatePage" element={<ClimatePage />} />
-        <Route path="/EnvironmentPage" element={<EnvironmentPage />} />
-        <Route path="/Workforce" element={<Workforce />} />
         <Route path ="/" element={<HomePage />} />
       </Routes>
     </Router>
