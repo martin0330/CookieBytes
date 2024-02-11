@@ -44,6 +44,7 @@ def graphing(countryName, dataset):
         plt.xlabel('Year', fontsize=14, color='lightblue')
         plt.ylabel('Annual CO₂ emissions', fontsize=14, color='lightblue')
         plt.title(f'Annual Co2 emissions {countryName}', fontsize=16, color='lightblue')
+        plt.savefig(dataset+"_"+countryName)
         plt.show()
 
     elif (dataset == "total_ghg_emissions"):
@@ -56,6 +57,7 @@ def graphing(countryName, dataset):
         plt.xlabel('Year', fontsize=14, color='lightblue')
         plt.ylabel('Emmisions in Co2 equivalents', fontsize=14, color='lightblue')
         plt.title(f'Annual greenhouse gas emissions for {countryName}', fontsize=16, color='lightblue')
+        plt.savefig(dataset+"_"+countryName)
         plt.show()
 
     elif(dataset == "modern_renewable"):
@@ -63,15 +65,16 @@ def graphing(countryName, dataset):
         country_df = modern_renewable[country_mask]
 
         plt.figure(figsize=(10, 6))
-        plt.plot(country_df['Year'], country_df['Electricity from wind - TWh'], label='Wind', marker='o', color='purple', alpha=0.5)
+        plt.plot(country_df['Year'], country_df['Electricity from wind - TWh'], label='Wind', marker='o', color='red', alpha=0.5)
         plt.plot(country_df['Year'], country_df['Electricity from hydro - TWh'], label='Hydro', marker='o', color='purple', alpha=0.5)
-        plt.plot(country_df['Year'], country_df['Electricity from solar - TWh'], label='Solar', marker='o', color='purple', alpha=0.5)
-        plt.plot(country_df['Year'], country_df['Other renewables including bioenergy - TWh'], label='Other', marker='o', color='purple', alpha=0.5)
+        plt.plot(country_df['Year'], country_df['Electricity from solar - TWh'], label='Solar', marker='o', color='blue', alpha=0.5)
+        plt.plot(country_df['Year'], country_df['Other renewables including bioenergy - TWh'], label='Other', marker='o', color='orange', alpha=0.5)
         plt.grid(True)
-        plt.xlabel('Year', fontsize=14, color='lightblue')
-        plt.ylabel('Electricity in TWh', fontsize=14, color='lightblue')
+        plt.xlabel('Year', fontsize=14)
+        plt.ylabel('Electricity in TWh', fontsize=14)
         plt.title(f'Modern renewable energy generation by source for {countryName}', fontsize=16, color='lightblue')
         plt.legend()
+        plt.savefig(dataset+"_"+countryName)
         plt.show()
 
     elif(dataset == "annual_freshwater_withdrawals"):
@@ -84,6 +87,7 @@ def graphing(countryName, dataset):
         plt.xlabel('Year', fontsize=14, color='lightblue')
         plt.ylabel('Withdrawals in billion cubic meters', fontsize=14, color='lightblue')
         plt.title(f'Annual freshwater withdrawals for {countryName}', fontsize=16, color='lightblue')
+        plt.savefig(dataset+"_"+countryName)
         plt.show()
 
     elif(dataset == "plastic_pollution"):
@@ -96,6 +100,11 @@ def graphing(countryName, dataset):
         plt.xlabel('Country', fontsize=14, color='lightblue')
         plt.ylabel('kg/year', fontsize=14, color='lightblue')
         plt.title('Mismanaged plastic waste to ocean per capita (kg per year)', fontsize=16, color='lightblue')
+        plt.savefig(dataset+"_"+countryName)
         plt.show()
 
-graphing("United States", "total_ghg_emissions")
+graphs = ["df_absolute_co2","total_ghg_emissions","modern_renewable","annual_freshwater_withdrawals","plastic_pollution"]
+
+for country in countries_to_keep:
+    for graph in graphs:
+        graphing(country,graph)
